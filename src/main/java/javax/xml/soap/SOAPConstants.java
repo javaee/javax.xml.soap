@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2014 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2015 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -43,36 +43,36 @@ package javax.xml.soap;
 import javax.xml.namespace.QName;
 
 /**
- * The definition of constants pertaining to the SOAP protocol. 
+ * The definition of constants pertaining to the SOAP protocol.
  *
  * @since 1.6
  */
 public interface SOAPConstants {
     /**
-     * Used to create <code>MessageFactory</code> instances that create
-     * <code>SOAPMessages</code> whose concrete type is based on the
-     * <code>Content-Type</code> MIME header passed to the
-     * <code>createMessage</code> method. If no <code>Content-Type</code>
-     * header is passed then the <code>createMessage</code> may throw an
-     * <code>IllegalArgumentException</code> or, in the case of the no
-     * argument version of <code>createMessage</code>, an
-     * <code>UnsupportedOperationException</code>.
+     * Used to create {@code MessageFactory} instances that create
+     * {@code SOAPMessages} whose concrete type is based on the
+     * {@code Content-Type} MIME header passed to the
+     * {@code createMessage} method. If no {@code Content-Type}
+     * header is passed then the {@code createMessage} may throw an
+     * {@code IllegalArgumentException} or, in the case of the no
+     * argument version of {@code createMessage}, an
+     * {@code UnsupportedOperationException}.
      *
      * @since  1.6, SAAJ 1.3
      */
     public static final String DYNAMIC_SOAP_PROTOCOL = "Dynamic Protocol";
 
     /**
-     * Used to create <code>MessageFactory</code> instances that create
-     * <code>SOAPMessages</code> whose behavior supports the SOAP 1.1  specification.
+     * Used to create {@code MessageFactory} instances that create
+     * {@code SOAPMessages} whose behavior supports the SOAP 1.1  specification.
      *
      * @since  1.6, SAAJ 1.3
      */
     public static final String SOAP_1_1_PROTOCOL = "SOAP 1.1 Protocol";
 
     /**
-     * Used to create <code>MessageFactory</code> instances that create
-     * <code>SOAPMessages</code> whose behavior supports the SOAP 1.2
+     * Used to create {@code MessageFactory} instances that create
+     * {@code SOAPMessages} whose behavior supports the SOAP 1.2
      * specification
      *
      * @since  1.6, SAAJ 1.3
@@ -91,16 +91,16 @@ public interface SOAPConstants {
      * @since 1.6, SAAJ 1.3
      */
     public static final String
-		URI_NS_SOAP_1_1_ENVELOPE = "http://schemas.xmlsoap.org/soap/envelope/";
+                URI_NS_SOAP_1_1_ENVELOPE = "http://schemas.xmlsoap.org/soap/envelope/";
     /**
      * The namespace identifier for the SOAP 1.2 envelope.
      * @since 1.6, SAAJ 1.3
      */
     public static final String
-		URI_NS_SOAP_1_2_ENVELOPE = "http://www.w3.org/2003/05/soap-envelope";
+                URI_NS_SOAP_1_2_ENVELOPE = "http://www.w3.org/2003/05/soap-envelope";
 
     /**
-     * The namespace identifier for the SOAP 1.1 envelope, All SOAPElements in this 
+     * The namespace identifier for the SOAP 1.1 envelope, All SOAPElements in this
      * namespace are defined by the SOAP 1.1 specification.
      */
     public static final String
@@ -108,9 +108,9 @@ public interface SOAPConstants {
 
     /**
      * The namespace identifier for the SOAP 1.1 encoding.
-     * An attribute named <code>encodingStyle</code> in the
-     * <code>URI_NS_SOAP_ENVELOPE</code> namespace and set to the value
-     * <code>URI_NS_SOAP_ENCODING</code> can be added to an element to indicate
+     * An attribute named {@code encodingStyle} in the
+     * {@code URI_NS_SOAP_ENVELOPE} namespace and set to the value
+     * {@code URI_NS_SOAP_ENCODING} can be added to an element to indicate
      * that it is encoded using the rules in section 5 of the SOAP 1.1
      * specification.
      */
@@ -125,14 +125,14 @@ public interface SOAPConstants {
         URI_NS_SOAP_1_2_ENCODING = "http://www.w3.org/2003/05/soap-encoding";
 
     /**
-     * The media type  of the <code>Content-Type</code> MIME header in SOAP 1.1.
+     * The media type  of the {@code Content-Type} MIME header in SOAP 1.1.
      * @since 1.6, SAAJ 1.3
      */
     public static final String
         SOAP_1_1_CONTENT_TYPE = "text/xml";
 
     /**
-     * The media type  of the <code>Content-Type</code> MIME header in SOAP 1.2.
+     * The media type  of the {@code Content-Type} MIME header in SOAP 1.2.
      * @since 1.6, SAAJ 1.3
      */
     public static final String
@@ -186,33 +186,33 @@ public interface SOAPConstants {
      */
     public static final QName SOAP_VERSIONMISMATCH_FAULT =
          new QName(URI_NS_SOAP_1_2_ENVELOPE, "VersionMismatch", SOAP_ENV_PREFIX);
-                                                                                                                  
+
     /**
      * SOAP 1.2 MustUnderstand Fault
      * @since 1.6, SAAJ 1.3
      */
     public static final QName SOAP_MUSTUNDERSTAND_FAULT =
          new QName(URI_NS_SOAP_1_2_ENVELOPE, "MustUnderstand", SOAP_ENV_PREFIX);
-                                                                                                                  
+
     /**
      * SOAP 1.2 DataEncodingUnknown Fault
      * @since 1.6, SAAJ 1.3
      */
     public static final QName SOAP_DATAENCODINGUNKNOWN_FAULT =
          new QName(URI_NS_SOAP_1_2_ENVELOPE, "DataEncodingUnknown", SOAP_ENV_PREFIX);
-                                                                                                                  
+
     /**
      * SOAP 1.2 Sender Fault
      * @since 1.6, SAAJ 1.3
      */
     public static final QName SOAP_SENDER_FAULT =
          new QName(URI_NS_SOAP_1_2_ENVELOPE, "Sender", SOAP_ENV_PREFIX);
-                                                                                                                  
+
     /**
      * SOAP 1.2 Receiver Fault
      * @since 1.6, SAAJ 1.3
      */
     public static final QName SOAP_RECEIVER_FAULT =
          new QName(URI_NS_SOAP_1_2_ENVELOPE, "Receiver", SOAP_ENV_PREFIX);
-                                                                                                                  
+
 }

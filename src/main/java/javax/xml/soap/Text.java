@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2014 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2015 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -41,7 +41,7 @@
 package javax.xml.soap;
 
 /**
- * A representation of a node whose value is text.  A <code>Text</code> object
+ * A representation of a node whose value is text.  A {@code Text} object
  * may represent text that is content or text that is a comment.
  *
  * @since 1.6
@@ -49,10 +49,10 @@ package javax.xml.soap;
 public interface Text extends Node, org.w3c.dom.Text {
 
     /**
-     * Retrieves whether this <code>Text</code> object represents a comment.
+     * Retrieves whether this {@code Text} object represents a comment.
      *
-     * @return <code>true</code> if this <code>Text</code> object is a
-     *         comment; <code>false</code> otherwise
+     * @return {@code true} if this {@code Text} object is a
+     *         comment; {@code false} otherwise
      */
     public boolean isComment();
 }

@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2014 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2015 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -41,38 +41,38 @@
 package javax.xml.soap;
 
 /**
- * A factory for creating <code>SOAPConnection</code> objects. Implementation of this class
- * is optional. If <code>SOAPConnectionFactory.newInstance()</code> throws an 
+ * A factory for creating {@code SOAPConnection} objects. Implementation of this class
+ * is optional. If {@code SOAPConnectionFactory.newInstance()} throws an
  * UnsupportedOperationException then the implementation does not support the
  * SAAJ communication infrastructure. Otherwise {@link SOAPConnection} objects
- * can be created by calling <code>createConnection()</code> on the newly
- * created <code>SOAPConnectionFactory</code> object.
+ * can be created by calling {@code createConnection()} on the newly
+ * created {@code SOAPConnectionFactory} object.
  *
  * @since 1.6
  */
 public abstract class SOAPConnectionFactory {
     /**
-     * A constant representing the default value for a <code>SOAPConnection</code>
+     * A constant representing the default value for a {@code SOAPConnection}
      * object. The default is the point-to-point SOAP connection.
      */
     static final String DEFAULT_SOAP_CONNECTION_FACTORY
         = "com.sun.xml.internal.messaging.saaj.client.p2p.HttpSOAPConnectionFactory";
 
     /**
-     * A constant representing the <code>SOAPConnection</code> class.
+     * A constant representing the {@code SOAPConnection} class.
      */
     static private final String SF_PROPERTY
         = "javax.xml.soap.SOAPConnectionFactory";
 
     /**
      * Creates an instance of the default
-     * <code>SOAPConnectionFactory</code> object.
+     * {@code SOAPConnectionFactory} object.
      *
      * @return a new instance of a default
-     *         <code>SOAPConnectionFactory</code> object
+     *         {@code SOAPConnectionFactory} object
      *
      * @exception SOAPException if there was an error creating the
-     *            <code>SOAPConnectionFactory</code>
+     *            {@code SOAPConnectionFactory}
      *
      * @exception UnsupportedOperationException if newInstance is not
      * supported.
@@ -91,14 +91,13 @@ public abstract class SOAPConnectionFactory {
     }
 
     /**
-     * Create a new <code>SOAPConnection</code>.
+     * Create a new {@code SOAPConnection}.
      *
-     * @return the new <code>SOAPConnection</code> object.
+     * @return the new {@code SOAPConnection} object.
      *
      * @exception SOAPException if there was an exception creating the
-     * <code>SOAPConnection</code> object.
+     * {@code SOAPConnection} object.
      */
     public abstract SOAPConnection createConnection()
         throws SOAPException;
 }
-

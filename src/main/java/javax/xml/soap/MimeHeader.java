@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2014 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2015 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -43,8 +43,8 @@ package javax.xml.soap;
 
 /**
  * An object that stores a MIME header name and its value. One or more
- * <code>MimeHeader</code> objects may be contained in a <code>MimeHeaders</code>
- * object.  
+ * {@code MimeHeader} objects may be contained in a {@code MimeHeaders}
+ * object.
  *
  * @see MimeHeaders
  * @since 1.6
@@ -55,32 +55,32 @@ public class MimeHeader {
    private String value;
 
    /**
-    * Constructs a <code>MimeHeader</code> object initialized with the given
+    * Constructs a {@code MimeHeader} object initialized with the given
     * name and value.
     *
-    * @param name a <code>String</code> giving the name of the header
-    * @param value a <code>String</code> giving the value of the header
+    * @param name a {@code String} giving the name of the header
+    * @param value a {@code String} giving the value of the header
     */
     public MimeHeader(String name, String value) {
-	this.name = name;
-	this.value = value;
+        this.name = name;
+        this.value = value;
     }
 
     /**
-     * Returns the name of this <code>MimeHeader</code> object.
+     * Returns the name of this {@code MimeHeader} object.
      *
-     * @return the name of the header as a <code>String</code>
+     * @return the name of the header as a {@code String}
      */
     public String getName() {
-	return name;
+        return name;
     }
 
     /**
-     * Returns the value of this <code>MimeHeader</code> object.
+     * Returns the value of this {@code MimeHeader} object.
      *
-     * @return 	the value of the header as a <code>String</code>
+     * @return  the value of the header as a {@code String}
      */
     public String getValue() {
-	return value;
+        return value;
     }
 }

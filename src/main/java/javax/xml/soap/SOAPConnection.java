@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2014 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2015 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -47,18 +47,18 @@ package javax.xml.soap;
  * <p>
  * The SOAPConnection class is optional. Some implementations may
  * not implement this interface in which case the call to
- * <code>SOAPConnectionFactory.newInstance()</code> (see below) will
- * throw an <code>UnsupportedOperationException</code>.
+ * {@code SOAPConnectionFactory.newInstance()} (see below) will
+ * throw an {@code UnsupportedOperationException}.
  * <p>
- * A client can obtain a <code>SOAPConnection</code> object using a
+ * A client can obtain a {@code SOAPConnection} object using a
  * {@link SOAPConnectionFactory} object as in the following example:
- * <PRE>
+ * {@code
  *      SOAPConnectionFactory factory = SOAPConnectionFactory.newInstance();
  *      SOAPConnection con = factory.createConnection();
- * </PRE>
- * A <code>SOAPConnection</code> object can be used to send messages
+ * }
+ * A {@code SOAPConnection} object can be used to send messages
  * directly to a URL following the request/response paradigm.  That is,
- * messages are sent using the method <code>call</code>, which sends the
+ * messages are sent using the method {@code call}, which sends the
  * message and then waits until it gets a reply.
  *
  * @since 1.6
@@ -69,15 +69,15 @@ public abstract class SOAPConnection {
      * Sends the given message to the specified endpoint and blocks until
      * it has returned the response.
      *
-     * @param request the <code>SOAPMessage</code> object to be sent
-     * @param to an <code>Object</code> that identifies
+     * @param request the {@code SOAPMessage} object to be sent
+     * @param to an {@code Object} that identifies
      *         where the message should be sent. It is required to
      *         support Objects of type
-     *         <code>java.lang.String</code>,
-     *         <code>java.net.URL</code>, and when JAXM is present
-     *         <code>javax.xml.messaging.URLEndpoint</code>
+     *         {@code java.lang.String},
+     *         {@code java.net.URL}, and when JAXM is present
+     *         {@code javax.xml.messaging.URLEndpoint}
      *
-     * @return the <code>SOAPMessage</code> object that is the response to the
+     * @return the {@code SOAPMessage} object that is the response to the
      *         message that was sent
      * @throws SOAPException if there is a SOAP error
      */
@@ -87,12 +87,12 @@ public abstract class SOAPConnection {
     /**
      * Gets a message from a specific endpoint and blocks until it receives,
      *
-     * @param to an <code>Object</code> that identifies where
+     * @param to an {@code Object} that identifies where
      *                  the request should be sent. Objects of type
-     *                 <code>java.lang.String</code> and
-     *                 <code>java.net.URL</code> must be supported.
+     *                 {@code java.lang.String} and
+     *                 {@code java.net.URL} must be supported.
      *
-     * @return the <code>SOAPMessage</code> object that is the response to the
+     * @return the {@code SOAPMessage} object that is the response to the
      *                  get message request
      * @throws SOAPException if there is a SOAP error
      * @since 1.6, SAAJ 1.3
@@ -101,12 +101,12 @@ public abstract class SOAPConnection {
                                 throws SOAPException {
         throw new UnsupportedOperationException("All subclasses of SOAPConnection must override get()");
     }
-    
+
     /**
-     * Closes this <code>SOAPConnection</code> object.
+     * Closes this {@code SOAPConnection} object.
      *
      * @throws SOAPException if there is a SOAP error
      */
-    public abstract void close() 
-        throws SOAPException; 
+    public abstract void close()
+        throws SOAPException;
 }

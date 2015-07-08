@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2014 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2015 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -43,25 +43,25 @@ package javax.xml.soap;
 /**
  * An object representing the contents in the SOAP header part of the
  * SOAP envelope.
- * The immediate children of a <code>SOAPHeader</code> object can
- * be represented only as <code>SOAPHeaderElement</code> objects.
+ * The immediate children of a {@code SOAPHeader} object can
+ * be represented only as {@code SOAPHeaderElement} objects.
  * <P>
- * A <code>SOAPHeaderElement</code> object can have other
- * <code>SOAPElement</code> objects as its children.
+ * A {@code SOAPHeaderElement} object can have other
+ * {@code SOAPElement} objects as its children.
  *
  * @since 1.6
  */
 public interface SOAPHeaderElement extends SOAPElement {
 
     /**
-     * Sets the actor associated with this <code>SOAPHeaderElement</code>
+     * Sets the actor associated with this {@code SOAPHeaderElement}
      * object to the specified actor. The default value of an actor is:
-     *          <code>SOAPConstants.URI_SOAP_ACTOR_NEXT</code>
+     *          {@code SOAPConstants.URI_SOAP_ACTOR_NEXT}
      * <P>
-     * If this <code>SOAPHeaderElement</code> supports SOAP 1.2 then this call is
+     * If this {@code SOAPHeaderElement} supports SOAP 1.2 then this call is
      * equivalent to {@link #setRole(String)}
-     * 
-     * @param  actorURI a <code>String</code> giving the URI of the actor
+     *
+     * @param  actorURI a {@code String} giving the URI of the actor
      *           to set
      *
      * @exception IllegalArgumentException if there is a problem in
@@ -72,112 +72,112 @@ public interface SOAPHeaderElement extends SOAPElement {
     public void setActor(String actorURI);
 
     /**
-     * Sets the <code>Role</code> associated with this <code>SOAPHeaderElement</code>
-     * object to the specified <code>Role</code>.
+     * Sets the {@code Role} associated with this {@code SOAPHeaderElement}
+     * object to the specified {@code Role}.
      *
-     * @param uri - the URI of the <code>Role</code>
-     * 
+     * @param uri - the URI of the {@code Role}
+     *
      * @throws SOAPException if there is an error in setting the role
-     * 
-     * @exception UnsupportedOperationException if this message does not 
-     *      support the SOAP 1.2 concept of Fault Role. 
-     * 
+     *
+     * @exception UnsupportedOperationException if this message does not
+     *      support the SOAP 1.2 concept of Fault Role.
+     *
      * @since 1.6, SAAJ 1.3
      */
     public void setRole(String uri) throws SOAPException;
 
     /**
      * Returns the uri of the <i>actor</i> attribute of this
-     * <code>SOAPHeaderElement</code>.
+     * {@code SOAPHeaderElement}.
      *<P>
-     * If this <code>SOAPHeaderElement</code> supports SOAP 1.2 then this call is
+     * If this {@code SOAPHeaderElement} supports SOAP 1.2 then this call is
      * equivalent to {@link #getRole()}
-     * @return  a <code>String</code> giving the URI of the actor
+     * @return  a {@code String} giving the URI of the actor
      * @see #setActor
      */
     public String getActor();
 
     /**
      * Returns the value of the <i>Role</i> attribute of this
-     * <code>SOAPHeaderElement</code>.
+     * {@code SOAPHeaderElement}.
      *
-     * @return a <code>String</code> giving the URI of the <code>Role</code>
-     * 
-     * @exception UnsupportedOperationException if this message does not 
-     *      support the SOAP 1.2 concept of Fault Role. 
-     * 
+     * @return a {@code String} giving the URI of the {@code Role}
+     *
+     * @exception UnsupportedOperationException if this message does not
+     *      support the SOAP 1.2 concept of Fault Role.
+     *
      * @since 1.6, SAAJ 1.3
      */
     public String getRole();
 
     /**
-     * Sets the mustUnderstand attribute for this <code>SOAPHeaderElement</code>
+     * Sets the mustUnderstand attribute for this {@code SOAPHeaderElement}
      * object to be either true or false.
      * <P>
      * If the mustUnderstand attribute is on, the actor who receives the
-     * <code>SOAPHeaderElement</code> must process it correctly. This
-     * ensures, for example, that if the <code>SOAPHeaderElement</code>
+     * {@code SOAPHeaderElement} must process it correctly. This
+     * ensures, for example, that if the {@code SOAPHeaderElement}
      * object modifies the message, that the message is being modified correctly.
      *
-     * @param mustUnderstand <code>true</code> to set the mustUnderstand
-     *        attribute to true; <code>false</code> to set it to false
+     * @param mustUnderstand {@code true} to set the mustUnderstand
+     *        attribute to true; {@code false} to set it to false
      *
      * @exception IllegalArgumentException if there is a problem in
      * setting the mustUnderstand attribute
-     * @see #getMustUnderstand 
+     * @see #getMustUnderstand
      * @see #setRelay
      */
     public void setMustUnderstand(boolean mustUnderstand);
 
     /**
      * Returns the boolean value of the mustUnderstand attribute for this
-     * <code>SOAPHeaderElement</code>.
+     * {@code SOAPHeaderElement}.
      *
-     * @return <code>true</code> if the mustUnderstand attribute of this
-     *        <code>SOAPHeaderElement</code> object is turned on; <code>false</code>
+     * @return {@code true} if the mustUnderstand attribute of this
+     *        {@code SOAPHeaderElement} object is turned on; {@code false}
      *         otherwise
      */
     public boolean getMustUnderstand();
-    
+
     /**
-     * Sets the <i>relay</i> attribute for this <code>SOAPHeaderElement</code> to be 
+     * Sets the <i>relay</i> attribute for this {@code SOAPHeaderElement} to be
      * either true or false.
      * <P>
-     * The SOAP relay attribute is set to true to indicate that the SOAP header 
-     * block must be relayed by any node that is targeted by the header block 
+     * The SOAP relay attribute is set to true to indicate that the SOAP header
+     * block must be relayed by any node that is targeted by the header block
      * but not actually process it. This attribute is ignored on header blocks
-     * whose mustUnderstand attribute is set to true or that are targeted at 
-     * the ultimate reciever (which is the default). The default value of this 
-     * attribute is <code>false</code>.
-     * 
+     * whose mustUnderstand attribute is set to true or that are targeted at
+     * the ultimate reciever (which is the default). The default value of this
+     * attribute is {@code false}.
+     *
      * @param relay the new value of the <i>relay</i> attribute
-     * 
-     * @exception SOAPException if there is a problem in setting the 
-     * relay attribute. 
-     * @exception UnsupportedOperationException if this message does not 
+     *
+     * @exception SOAPException if there is a problem in setting the
+     * relay attribute.
+     * @exception UnsupportedOperationException if this message does not
      *      support the SOAP 1.2 concept of Relay attribute.
-     * 
-     * @see #setMustUnderstand 
+     *
+     * @see #setMustUnderstand
      * @see #getRelay
-     * 
+     *
      * @since 1.6, SAAJ 1.3
      */
     public void setRelay(boolean relay) throws SOAPException;
 
     /**
-     * Returns the boolean value of the <i>relay</i> attribute for this 
-     * <code>SOAPHeaderElement</code>
-     * 
-     * @return <code>true</code> if the relay attribute is turned on; 
-     * <code>false</code> otherwise
+     * Returns the boolean value of the <i>relay</i> attribute for this
+     * {@code SOAPHeaderElement}
      *
-     * @exception UnsupportedOperationException if this message does not 
-     *      support the SOAP 1.2 concept of Relay attribute. 
-     * 
-     * @see #getMustUnderstand 
+     * @return {@code true} if the relay attribute is turned on;
+     * {@code false} otherwise
+     *
+     * @exception UnsupportedOperationException if this message does not
+     *      support the SOAP 1.2 concept of Relay attribute.
+     *
+     * @see #getMustUnderstand
      * @see #setRelay
-     * 
+     *
      * @since 1.6, SAAJ 1.3
      */
-    public boolean getRelay();    
+    public boolean getRelay();
 }

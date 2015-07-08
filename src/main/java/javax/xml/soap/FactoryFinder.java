@@ -1,26 +1,41 @@
 /*
- * Copyright (c) 2004-2013 Oracle and/or its affiliates. All rights reserved.
- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * This code is free software; you can redistribute it and/or modify it
- * under the terms of the GNU General Public License version 2 only, as
- * published by the Free Software Foundation.  Oracle designates this
- * particular file as subject to the "Classpath" exception as provided
- * by Oracle in the LICENSE file that accompanied this code.
+ * Copyright (c) 2004-2015 Oracle and/or its affiliates. All rights reserved.
  *
- * This code is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
- * version 2 for more details (a copy is included in the LICENSE file that
- * accompanied this code).
+ * The contents of this file are subject to the terms of either the GNU
+ * General Public License Version 2 only ("GPL") or the Common Development
+ * and Distribution License("CDDL") (collectively, the "License").  You
+ * may not use this file except in compliance with the License.  You can
+ * obtain a copy of the License at
+ * http://glassfish.java.net/public/CDDL+GPL_1_1.html
+ * or packager/legal/LICENSE.txt.  See the License for the specific
+ * language governing permissions and limitations under the License.
  *
- * You should have received a copy of the GNU General Public License version
- * 2 along with this work; if not, write to the Free Software Foundation,
- * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ * When distributing the software, include this License Header Notice in each
+ * file and include the License file at packager/legal/LICENSE.txt.
  *
- * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
- * or visit www.oracle.com if you need additional information or have any
- * questions.
+ * GPL Classpath Exception:
+ * Oracle designates this particular file as subject to the "Classpath"
+ * exception as provided by Oracle in the GPL Version 2 section of the License
+ * file that accompanied this code.
+ *
+ * Modifications:
+ * If applicable, add the following below the License Header, with the fields
+ * enclosed by brackets [] replaced by your own identifying information:
+ * "Portions Copyright [year] [name of copyright owner]"
+ *
+ * Contributor(s):
+ * If you wish your version of this file to be governed by only the CDDL or
+ * only the GPL Version 2, indicate your decision by adding "[Contributor]
+ * elects to include this software in this distribution under the [CDDL or GPL
+ * Version 2] license."  If you don't indicate a single choice of license, a
+ * recipient has the option to distribute your version of this file under
+ * either the CDDL, the GPL Version 2 or to extend the choice of license to
+ * its licensees as provided above.  However, if you add GPL Version 2 code
+ * and therefore, elected the GPL Version 2 license, then the option applies
+ * only if the new code is made subject to such option by the copyright
+ * holder.
  */
 
 package javax.xml.soap;
@@ -33,7 +48,7 @@ class FactoryFinder {
 
     /**
      * Creates an instance of the specified class using the specified
-     * <code>ClassLoader</code> object.
+     * {@code ClassLoader} object.
      *
      * @exception SOAPException if the given class could not be found
      *            or could not be instantiated
@@ -54,13 +69,13 @@ class FactoryFinder {
     }
 
     /**
-     * Finds the implementation <code>Class</code> object for the given
+     * Finds the implementation {@code Class} object for the given
      * factory name, or null if that fails.
      * <P>
      * This method is package private so that this code can be shared.
      *
-     * @return the <code>Class</code> object of the specified message factory;
-     *         or <code>null</code>
+     * @return the {@code Class} object of the specified message factory;
+     *         or {@code null}
      *
      * @param factoryId             the name of the factory to find, which is
      *                              a system property
@@ -73,22 +88,22 @@ class FactoryFinder {
     }
 
     /**
-     * Finds the implementation <code>Class</code> object for the given
-     * factory name, or if that fails, finds the <code>Class</code> object
+     * Finds the implementation {@code Class} object for the given
+     * factory name, or if that fails, finds the {@code Class} object
      * for the given fallback class name. The arguments supplied must be
      * used in order. If using the first argument is successful, the second
      * one will not be used.
      * <P>
      * This method is package private so that this code can be shared.
      *
-     * @return the <code>Class</code> object of the specified message factory;
-     *         may be <code>null</code>
+     * @return the {@code Class} object of the specified message factory;
+     *         may be {@code null}
      *
      * @param factoryId             the name of the factory to find, which is
      *                              a system property
      * @param fallbackClassName     the implementation class name, which is
      *                              to be used only if nothing else
-     *                              is found; <code>null</code> to indicate that
+     *                              is found; {@code null} to indicate that
      *                              there is no fallback class name
      * @exception SOAPException if there is a SOAP error
      */
@@ -99,24 +114,24 @@ class FactoryFinder {
     }
 
     /**
-     * Finds the implementation <code>Class</code> object for the given
-     * factory name, or if that fails, finds the <code>Class</code> object
-     * for the given default class name, but only if <code>tryFallback</code>
-     * is <code>true</code>.  The arguments supplied must be used in order
+     * Finds the implementation {@code Class} object for the given
+     * factory name, or if that fails, finds the {@code Class} object
+     * for the given default class name, but only if {@code tryFallback}
+     * is {@code true}.  The arguments supplied must be used in order
      * If using the first argument is successful, the second one will not
      * be used.  Note the default class name may be needed even if fallback
      * is not to be attempted, so certain error conditions can be handled.
      * <P>
      * This method is package private so that this code can be shared.
      *
-     * @return the <code>Class</code> object of the specified message factory;
-     *         may not be <code>null</code>
+     * @return the {@code Class} object of the specified message factory;
+     *         may not be {@code null}
      *
      * @param factoryId             the name of the factory to find, which is
      *                              a system property
      * @param defaultClassName      the implementation class name, which is
      *                              to be used only if nothing else
-     *                              is found; <code>null</code> to indicate
+     *                              is found; {@code null} to indicate
      *                              that there is no default class name
      * @param tryFallback           whether to try the default class as a
      *                              fallback

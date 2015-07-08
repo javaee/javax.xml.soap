@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2014 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2015 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -41,18 +41,18 @@
 package javax.xml.soap;
 
 /**
- * A <code>SOAPBodyElement</code> object represents the contents in 
- * a <code>SOAPBody</code> object.  The <code>SOAPFault</code> interface
- * is a <code>SOAPBodyElement</code> object that has been defined.
+ * A {@code SOAPBodyElement} object represents the contents in
+ * a {@code SOAPBody} object.  The {@code SOAPFault} interface
+ * is a {@code SOAPBodyElement} object that has been defined.
  * <P>
- * A new <code>SOAPBodyElement</code> object can be created and added
- * to a <code>SOAPBody</code> object with the <code>SOAPBody</code>
- * method <code>addBodyElement</code>. In the following line of code,
- * <code>sb</code> is a <code>SOAPBody</code> object, and 
- * <code>myName</code> is a <code>Name</code> object.
- * <PRE>
+ * A new {@code SOAPBodyElement} object can be created and added
+ * to a {@code SOAPBody} object with the {@code SOAPBody}
+ * method {@code addBodyElement}. In the following line of code,
+ * {@code sb} is a {@code SOAPBody} object, and
+ * {@code myName} is a {@code Name} object.
+ * {@code
  *    SOAPBodyElement sbe = sb.addBodyElement(myName);
- * </PRE>
+ * }
  *
  * @since 1.6
  */
