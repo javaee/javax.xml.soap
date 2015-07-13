@@ -37,7 +37,6 @@
  * only if the new code is made subject to such option by the copyright
  * holder.
  */
-
 package javax.xml.soap;
 
 import java.io.InputStream;
@@ -65,15 +64,15 @@ import javax.activation.DataHandler;
  *       This header identifies the type of data in the content of an
  *       {@code AttachmentPart} object and MUST conform to [RFC2045].
  *       The following is an example of a Content-Type header:
- *       {@code
+ *       <PRE>
  *       Content-Type:  application/xml
- *       }
+ *       </PRE>
  *       The following line of code, in which {@code ap} is an
  *       {@code AttachmentPart} object, sets the header shown in
  *       the previous example.
- *       {@code
+ *       <PRE>
  *       ap.setMimeHeader("Content-Type", "application/xml");
- *       }
+ *       </PRE>
  *  </UL>
  * </OL>
  * <p>
@@ -94,23 +93,23 @@ import javax.activation.DataHandler;
  * sets the {@code AttachmentPart} object with some content and
  * header information, and adds the {@code AttachmentPart} object to
  * the {@code SOAPMessage} object.
- * {@code
+ * <PRE>
  *     AttachmentPart ap1 = m.createAttachmentPart();
  *     ap1.setContent(contentString1, "text/plain");
  *     m.addAttachmentPart(ap1);
- * }
+ * </PRE>
  *
  *
  * <p>
  * The following code fragment creates and adds a second
  * {@code AttachmentPart} instance to the same message. {@code jpegData}
  * is a binary byte buffer representing the jpeg file.
- * {@code
+ * <PRE>
  *     AttachmentPart ap2 = m.createAttachmentPart();
  *     byte[] jpegData =  ...;
  *     ap2.setContent(new ByteArrayInputStream(jpegData), "image/jpeg");
  *     m.addAttachmentPart(ap2);
- * }
+ * </PRE>
  * <p>
  * The {@code getContent} method retrieves the contents and header from
  * an {@code AttachmentPart} object. Depending on the
@@ -118,16 +117,16 @@ import javax.activation.DataHandler;
  * {@code Object} can either be a typed Java object corresponding
  * to the MIME type or an {@code InputStream} object that contains the
  * content as bytes.
- * {@code
+ * <PRE>
  *     String content1 = ap1.getContent();
  *     java.io.InputStream content2 = ap2.getContent();
- * }
+ * </PRE>
  *
  * The method {@code clearContent} removes all the content from an
  * {@code AttachmentPart} object but does not affect its header information.
- * {@code
+ * <PRE>
  *     ap1.clearContent();
- * }
+ * </PRE>
  *
  * @since 1.6
  */

@@ -52,10 +52,10 @@ package javax.xml.soap;
  * <p>
  * A client can obtain a {@code SOAPConnection} object using a
  * {@link SOAPConnectionFactory} object as in the following example:
- * {@code
+ * <pre>{@code
  *      SOAPConnectionFactory factory = SOAPConnectionFactory.newInstance();
  *      SOAPConnection con = factory.createConnection();
- * }
+ * }</pre>
  * A {@code SOAPConnection} object can be used to send messages
  * directly to a URL following the request/response paradigm.  That is,
  * messages are sent using the method {@code call}, which sends the

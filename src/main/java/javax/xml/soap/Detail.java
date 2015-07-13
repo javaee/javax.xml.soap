@@ -64,13 +64,13 @@ import javax.xml.namespace.QName;
  * {@code Name} object to pass to the method {@code addDetailEntry}.
  * The variable <i>se</i>, used to create the {@code Name} object,
  * is a {@code SOAPEnvelope} object.
- * {@code
+ * <pre>{@code
  *    Detail d = sf.getDetail();
  *    Name name = se.createName("GetLastTradePrice", "WOMBAT",
  *                                "http://www.wombat.org/trader");
  *    d.addDetailEntry(name);
  *    Iterator it = d.getDetailEntries();
- * }
+ * }</pre>
  *
  * @since 1.6
  */

@@ -50,10 +50,10 @@ import java.io.InputStream;
  * A SAAJ client can create a {@code MessageFactory} object
  * using the method {@code newInstance}, as shown in the following
  * lines of code.
- * {@code
+ * <pre>{@code
  *       MessageFactory mf = MessageFactory.newInstance();
  *       MessageFactory mf12 = MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
- * }
+ * }</pre>
  * <P>
  * All {@code MessageFactory} objects, regardless of how they are
  * created, will produce {@code SOAPMessage} objects that

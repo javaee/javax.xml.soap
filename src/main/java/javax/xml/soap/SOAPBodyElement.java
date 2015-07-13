@@ -50,9 +50,9 @@ package javax.xml.soap;
  * method {@code addBodyElement}. In the following line of code,
  * {@code sb} is a {@code SOAPBody} object, and
  * {@code myName} is a {@code Name} object.
- * {@code
+ * <pre>{@code
  *    SOAPBodyElement sbe = sb.addBodyElement(myName);
- * }
+ * }</pre>
  *
  * @since 1.6
  */

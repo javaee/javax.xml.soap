@@ -61,12 +61,12 @@ package javax.xml.soap;
  * object <i>message</i> to get the {@code SOAPPart} object <i>sp</i>,
  * which is then used to get the {@code SOAPEnvelope} object <i>se</i>.
  *
- * {@code
+ * <pre>{@code
  *     SOAPPart sp = message.getSOAPPart();
  *     SOAPEnvelope se = sp.getEnvelope();
  *     SOAPHeader sh = se.getHeader();
  *     SOAPBody sb = se.getBody();
- * }
+ * }</pre>
  * <P>
  * It is possible to change the body or header of a {@code SOAPEnvelope}
  * object by retrieving the current one, deleting it, and then adding
@@ -74,9 +74,9 @@ package javax.xml.soap;
  * {@code deleteNode} deletes the XML element (node) on which it is
  * called.  For example, the following line of code deletes the
  * {@code SOAPBody} object that is retrieved by the method {@code getBody}.
- * {@code
+ * <pre>{@code
  *      se.getBody().detachNode();
- * }
+ * }</pre>
  * To create a {@code SOAPHeader} object to replace the one that was removed,
  * a client uses
  * the method {@code SOAPEnvelope.addHeader}, which creates a new header and
@@ -86,14 +86,14 @@ package javax.xml.soap;
  * retrieves the current header, removes it, and adds a new one. Then
  * it retrieves the current body, removes it, and adds a new one.
  *
- * {@code
+ * <pre>{@code
  *     SOAPPart sp = message.getSOAPPart();
  *     SOAPEnvelope se = sp.getEnvelope();
  *     se.getHeader().detachNode();
  *     SOAPHeader sh = se.addHeader();
  *     se.getBody().detachNode();
  *     SOAPBody sb = se.addBody();
- * }
+ * }</pre>
  * It is an error to add a {@code SOAPBody} or {@code SOAPHeader}
  * object if one already exists.
  * <P>
@@ -104,10 +104,10 @@ package javax.xml.soap;
  * creates {@code Name} objects with just a local name.  The following line of
  * code, in which <i>se</i> is a {@code SOAPEnvelope} object, creates a new
  * {@code Name} object with all three.
- * {@code
+ * <pre>{@code
  *     Name name = se.createName("GetLastTradePrice", "WOMBAT",
  *                                "http://www.wombat.org/trader");
- * }
+ * }</pre>
  *
  * @since 1.6
  */

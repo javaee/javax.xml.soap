@@ -70,7 +70,7 @@ public interface SOAPFault extends SOAPBodyElement {
      * be of type {@code Name}. This method provides a convenient
      * way to set a fault code. For example,
      *
-     * {@code
+     * <pre>{@code
      * SOAPEnvelope se = ...;
      * // Create a qualified name in the SOAP namespace with a localName
      * // of "Client". Note that prefix parameter is optional and is null
@@ -79,7 +79,7 @@ public interface SOAPFault extends SOAPBodyElement {
      *                            SOAPConstants.URI_NS_SOAP_ENVELOPE);
      * SOAPFault fault = ...;
      * fault.setFaultCode(qname);
-     * }
+     * }</pre>
      * It is preferable to use this method over {@link #setFaultCode(String)}.
      *
      * @param faultCodeQName a {@code Name} object giving the fault
@@ -254,9 +254,9 @@ public interface SOAPFault extends SOAPBodyElement {
      * If this
      * {@code SOAPFault} is part of a message that supports SOAP 1.2 then
      * this call is equivalent to:
-     * {@code
+     * <pre>{@code
      *      addFaultReasonText(faultString, Locale.getDefault());
-     * }
+     * }</pre>
      *
      * @param faultString a {@code String} giving an explanation of
      *        the fault
@@ -274,9 +274,9 @@ public interface SOAPFault extends SOAPBodyElement {
      * If this
      * {@code SOAPFault} is part of a message that supports SOAP 1.2 then
      * this call is equivalent to:
-     * {@code
+     * <pre>{@code
      *      addFaultReasonText(faultString, locale);
-     * }
+     * }</pre>
      *
      * @param faultString a {@code String} giving an explanation of
      *         the fault
@@ -298,13 +298,13 @@ public interface SOAPFault extends SOAPBodyElement {
      * If this
      * {@code SOAPFault} is part of a message that supports SOAP 1.2 then
      * this call is equivalent to:
-     * {@code
+     * <pre>{@code
      *    String reason = null;
      *    try {
      *        reason = (String) getFaultReasonTexts().next();
      *    } catch (SOAPException e) {}
      *    return reason;
-     * }
+     * }</pre>
      *
      * @return a {@code String} giving an explanation of
      *        the fault
@@ -320,13 +320,13 @@ public interface SOAPFault extends SOAPBodyElement {
      * If this
      * {@code SOAPFault} is part of a message that supports SOAP 1.2 then
      * this call is equivalent to:
-     * {@code
+     * <pre>{@code
      *    Locale locale = null;
      *    try {
      *        locale = (Locale) getFaultReasonLocales().next();
      *    } catch (SOAPException e) {}
      *    return locale;
-     * }
+     * }</pre>
      *
      * @return a {@code Locale} object indicating the native language of
      *          the fault string or {@code null} if no locale was specified
@@ -445,10 +445,10 @@ public interface SOAPFault extends SOAPBodyElement {
      * <P>
      * Code sample:
      *
-     * {@code
+     * <pre>{@code
      * SOAPFault fault = ...;
      * fault.addFaultReasonText("Version Mismatch", Locale.ENGLISH);
-     * }
+     * }</pre>
      *
      * @param text -- reason message string
      * @param locale -- Locale object representing the locale of the message

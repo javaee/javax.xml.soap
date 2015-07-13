@@ -57,18 +57,18 @@ import javax.xml.namespace.QName;
  * object, which is optional, is not needed, it can be retrieved and deleted
  * with the following line of code. The variable <i>se</i> is a
  * {@code SOAPEnvelope} object.
- * {@code
+ * <pre>{@code
  *      se.getHeader().detachNode();
- * }
+ * }</pre>
  *
  * A {@code SOAPHeader} object is created with the {@code SOAPEnvelope}
  * method {@code addHeader}. This method, which creates a new header and adds it
  * to the envelope, may be called only after the existing header has been removed.
  *
- * {@code
+ * <pre>{@code
  *      se.getHeader().detachNode();
  *      SOAPHeader sh = se.addHeader();
- * }
+ * }</pre>
  * <P>
  * A {@code SOAPHeader} object can have only {@code SOAPHeaderElement}
  * objects as its immediate children. The method {@code addHeaderElement}
@@ -76,9 +76,9 @@ import javax.xml.namespace.QName;
  * {@code SOAPHeader} object. In the following line of code, the
  * argument to the method {@code addHeaderElement} is a {@code Name}
  * object that is the name for the new {@code HeaderElement} object.
- * {@code
+ * <pre>{@code
  *      SOAPHeaderElement shElement = sh.addHeaderElement(name);
- * }
+ * }</pre>
  *
  * @see SOAPHeaderElement
  * @since 1.6

@@ -70,12 +70,12 @@ import javax.activation.DataHandler;
  * object, and the {@code SOAPEnvelope} object is used to retrieve the
  * {@code SOAPBody} and {@code SOAPHeader} objects.
  *
- * {@code
+ * <pre>{@code
  *     SOAPPart sp = message.getSOAPPart();
  *     SOAPEnvelope se = sp.getEnvelope();
  *     SOAPBody sb = se.getBody();
  *     SOAPHeader sh = se.getHeader();
- * }
+ * }</pre>
  *
  * <P>
  * In addition to the mandatory {@code SOAPPart} object, a {@code SOAPMessage}

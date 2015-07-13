@@ -69,9 +69,9 @@ import javax.xml.transform.Source;
  * calling the method {@code SOAPMessage.getSOAPPart}. The
  * following  line of code, in which {@code message} is a
  * {@code SOAPMessage} object, retrieves the SOAP part of a message.
- * {@code
+ * <pre>{@code
  *   SOAPPart soapPart = message.getSOAPPart();
- * }
+ * }</pre>
  * <P>
  * A {@code SOAPPart} object contains a {@code SOAPEnvelope} object,
  * which in turn contains a {@code SOAPBody} object and a
