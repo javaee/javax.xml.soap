@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2015 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2016 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -63,17 +63,10 @@ import org.w3c.dom.Element;
 public abstract class SOAPFactory {
 
     /**
-     * A constant representing the property used to lookup the name of
-     * a {@code SOAPFactory} implementation class.
-     */
-    static private final String SOAP_FACTORY_PROPERTY =
-        "javax.xml.soap.SOAPFactory";
-
-    /**
      * Class name of default {@code SOAPFactory} implementation.
      */
-    static final String DEFAULT_SOAP_FACTORY
-        = "com.sun.xml.internal.messaging.saaj.soap.ver1_1.SOAPFactory1_1Impl";
+    private static final String DEFAULT_SOAP_FACTORY
+            = "com.sun.xml.internal.messaging.saaj.soap.ver1_1.SOAPFactory1_1Impl";
 
     /**
      * Creates a {@code SOAPElement} object from an existing DOM
@@ -254,18 +247,10 @@ public abstract class SOAPFactory {
 
     /**
      * Creates a new {@code SOAPFactory} object that is an instance of
-     * the default implementation (SOAP 1.1),
+     * the default implementation (SOAP 1.1).
      *
-     * This method uses the following ordered lookup procedure to determine the SOAPFactory implementation class to load:
-     * <UL>
-     *  <LI> Use the javax.xml.soap.SOAPFactory system property.
-     *  <LI> Use the properties file "lib/jaxm.properties" in the JRE directory. This configuration file is in standard
-     * java.util.Properties format and contains the fully qualified name of the implementation class with the key being the
-     * system property defined above.
-     *  <LI> Use the Services API (as detailed in the JAR specification), if available, to determine the classname. The Services API
-     * will look for a classname in the file META-INF/services/javax.xml.soap.SOAPFactory in jars available to the runtime.
-     *  <LI> Use the SAAJMetaFactory instance to locate the SOAPFactory implementation class.
-     * </UL>
+     * This method uses the lookup procedure specified in {@link javax.xml.soap} to locate and load the
+     * {@link javax.xml.soap.SOAPFactory} class.
      *
      * @return a new instance of a {@code SOAPFactory}
      *
@@ -277,10 +262,13 @@ public abstract class SOAPFactory {
         throws SOAPException
     {
         try {
-            SOAPFactory factory = (SOAPFactory) FactoryFinder.find(
-                    SOAP_FACTORY_PROPERTY, DEFAULT_SOAP_FACTORY, false);
-            if (factory != null)
-                return factory;
+            SOAPFactory factory = FactoryFinder.find(
+                    SOAPFactory.class,
+                    DEFAULT_SOAP_FACTORY,
+                    false);
+            if (factory != null) return factory;
+
+            // leave it on SAAJMetaFactory
             return newInstance(SOAPConstants.SOAP_1_1_PROTOCOL);
         } catch (Exception ex) {
             throw new SOAPException(

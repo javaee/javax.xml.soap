@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2015 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2016 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -156,7 +156,7 @@ public class SOAPException extends Exception {
      * @param  cause the {@code Throwable} object that caused this
      *         {@code SOAPException} object to be thrown.  The value of this
      *         parameter is saved for later retrieval by the
-     *         {@link #getCause()} method.  A <tt>null</tt> value is
+     *         {@link #getCause()} method.  A {@code null} value is
      *         permitted and indicates that the cause is nonexistent or
      *         unknown.
      * @return  a reference to this {@code SOAPException} instance
