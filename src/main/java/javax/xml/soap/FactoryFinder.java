@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2017 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -260,10 +260,14 @@ class FactoryFinder {
         return null;
     }
 
-    private static String getSystemProperty(String property) {
+    private static String getSystemProperty(final String property) {
         logger.log(Level.FINE, "Checking system property {0}", property);
-        String value = AccessController.doPrivileged(
-                (PrivilegedAction<String>) () -> System.getProperty(property));
+        String value = AccessController.doPrivileged(new PrivilegedAction<String>() {
+            @Override
+            public String run() {
+                return System.getProperty(property);
+            }
+        });
         logFound(value);
         return value;
     }
