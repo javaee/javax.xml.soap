@@ -379,7 +379,6 @@
                             <artifactId>maven-surefire-plugin</artifactId>
                             <configuration>
                                 <argLine>
-                                    -Xdiag
                                     --add-modules java.xml.soap
                                     --module-path ${basedir}/target/classes
                                     --patch-module java.xml.soap=${basedir}/target/test-classes
