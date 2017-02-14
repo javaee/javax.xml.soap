@@ -199,22 +199,22 @@ public class MimeHeaders {
         return headers.iterator();
     }
 
-    class MatchingIterator implements Iterator {
-        private boolean match;
-        private Iterator iterator;
-        private String[] names;
-        private Object nextHeader;
+    static class MatchingIterator implements Iterator<MimeHeader> {
+        private final boolean match;
+        private final Iterator<MimeHeader> iterator;
+        private final String[] names;
+        private MimeHeader nextHeader;
 
-        MatchingIterator(String[] names, boolean match) {
+        MatchingIterator(String[] names, boolean match, Iterator<MimeHeader> i) {
             this.match = match;
             this.names = names;
-            this.iterator = headers.iterator();
+            this.iterator = i;
         }
 
-        private Object nextMatch() {
+        private MimeHeader nextMatch() {
         next:
             while (iterator.hasNext()) {
-                MimeHeader hdr = (MimeHeader) iterator.next();
+                MimeHeader hdr = iterator.next();
 
                 if (names == null)
                     return match ? null : hdr;
@@ -240,11 +240,11 @@ public class MimeHeaders {
         }
 
         @Override
-        public Object next() {
+        public MimeHeader next() {
             // hasNext should've prefetched the header for us,
             // return it.
             if (nextHeader != null) {
-                Object ret = nextHeader;
+                MimeHeader ret = nextHeader;
                 nextHeader = null;
                 return ret;
             }
@@ -270,7 +270,7 @@ public class MimeHeaders {
      *          objects whose name matches one of the names in the given list
      */
     public Iterator getMatchingHeaders(String[] names) {
-        return new MatchingIterator(names, true);
+        return new MatchingIterator(names, true, headers.iterator());
     }
 
     /**
@@ -283,6 +283,6 @@ public class MimeHeaders {
      *          objects whose name does not match one of the names in the given list
      */
     public Iterator getNonMatchingHeaders(String[] names) {
-        return new MatchingIterator(names, false);
+        return new MatchingIterator(names, false, headers.iterator());
     }
 }
