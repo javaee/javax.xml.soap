@@ -10,7 +10,7 @@
     and Distribution License("CDDL") (collectively, the "License").  You
     may not use this file except in compliance with the License.  You can
     obtain a copy of the License at
-    https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
+    http://glassfish.java.net/public/CDDL+GPL_1_1.html
     or packager/legal/LICENSE.txt.  See the License for the specific
     language governing permissions and limitations under the License.
 
@@ -124,6 +124,11 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>org.glassfish.copyright</groupId>
+                    <artifactId>glassfish-copyright-maven-plugin</artifactId>
+                    <version>1.40</version>
+                </plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.19.1</version>
@@ -146,6 +151,30 @@
                         <compilerArg>-Xlint:all</compilerArg>
                     </compilerArgs>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.glassfish.copyright</groupId>
+                <artifactId>glassfish-copyright-maven-plugin</artifactId>
+                <configuration>
+                    <templateFile>${project.basedir}/copyright.txt</templateFile>
+                    <excludeFile>${project.basedir}/copyright-exclude</excludeFile>
+                    <!-- skip files not under SCM-->
+                    <scmOnly>true</scmOnly>
+                    <!-- turn off warnings -->
+                    <warn>true</warn>
+                    <!-- for use with repair -->
+                    <update>false</update>
+                    <!-- check that year is correct -->
+                    <ignoreYear>false</ignoreYear>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copyright</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.glassfish.build</groupId>
