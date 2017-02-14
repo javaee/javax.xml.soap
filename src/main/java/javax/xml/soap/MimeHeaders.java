@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2015 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2017 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -57,14 +57,14 @@ import java.util.Vector;
  * @since 1.6
  */
 public class MimeHeaders {
-    private Vector headers;
+    private Vector<MimeHeader> headers;
 
    /**
     * Constructs a default {@code MimeHeaders} object initialized with
     * an empty {@code Vector} object.
     */
     public MimeHeaders() {
-        headers = new Vector();
+        headers = new Vector<>();
     }
 
     /**
@@ -77,10 +77,10 @@ public class MimeHeaders {
      * @see #setHeader
      */
     public String[] getHeader(String name) {
-        Vector values = new Vector();
+        Vector<String> values = new Vector<>();
 
         for(int i = 0; i < headers.size(); i++) {
-            MimeHeader hdr = (MimeHeader) headers.elementAt(i);
+            MimeHeader hdr = headers.elementAt(i);
             if (hdr.getName().equalsIgnoreCase(name)
                 && hdr.getValue() != null)
                 values.addElement(hdr.getValue());
@@ -118,7 +118,7 @@ public class MimeHeaders {
             throw new IllegalArgumentException("Illegal MimeHeader name");
 
         for(int i = 0; i < headers.size(); i++) {
-            MimeHeader hdr = (MimeHeader) headers.elementAt(i);
+            MimeHeader hdr = headers.elementAt(i);
             if (hdr.getName().equalsIgnoreCase(name)) {
                 if (!found) {
                     headers.setElementAt(new MimeHeader(hdr.getName(),
@@ -156,7 +156,7 @@ public class MimeHeaders {
         int pos = headers.size();
 
         for(int i = pos - 1 ; i >= 0; i--) {
-            MimeHeader hdr = (MimeHeader) headers.elementAt(i);
+            MimeHeader hdr = headers.elementAt(i);
             if (hdr.getName().equalsIgnoreCase(name)) {
                 headers.insertElementAt(new MimeHeader(name, value),
                                         i+1);
@@ -175,7 +175,7 @@ public class MimeHeaders {
      */
     public void removeHeader(String name) {
         for(int i = 0; i < headers.size(); i++) {
-            MimeHeader hdr = (MimeHeader) headers.elementAt(i);
+            MimeHeader hdr = headers.elementAt(i);
             if (hdr.getName().equalsIgnoreCase(name))
                 headers.removeElementAt(i--);
         }
@@ -232,12 +232,14 @@ public class MimeHeaders {
         }
 
 
+        @Override
         public boolean hasNext() {
             if (nextHeader == null)
                 nextHeader = nextMatch();
             return nextHeader != null;
         }
 
+        @Override
         public Object next() {
             // hasNext should've prefetched the header for us,
             // return it.
@@ -251,6 +253,7 @@ public class MimeHeaders {
             return null;
         }
 
+        @Override
         public void remove() {
             iterator.remove();
         }
