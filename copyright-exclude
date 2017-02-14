@@ -1,2 +1,4 @@
 /src/test/java/saaj/factory/
 /src/test/resources/javax/xml/soap/test.policy
+/copyright-exclude
+/copyright.txt
