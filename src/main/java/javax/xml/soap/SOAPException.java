@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2017 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -98,6 +98,9 @@ public class SOAPException extends Exception {
     /**
      * Constructs a {@code SOAPException} object initialized
      * with the given {@code Throwable} object.
+     *
+     * @param cause a {@code Throwable} object that is to
+     *        be embedded in this {@code SOAPException} object
      */
     public SOAPException(Throwable cause) {
         super(cause.toString());
@@ -118,6 +121,7 @@ public class SOAPException extends Exception {
      *         message of the embedded {@code Throwable} object,
      *         if there is one
      */
+    @Override
     public String getMessage() {
         String message = super.getMessage();
         if (message == null && cause != null) {
@@ -136,6 +140,7 @@ public class SOAPException extends Exception {
      *         if there is none
      */
 
+    @Override
     public Throwable getCause() {
         return cause;
     }
@@ -166,6 +171,7 @@ public class SOAPException extends Exception {
      * @throws IllegalStateException if the cause for this {@code SOAPException} object
      *         has already been initialized
      */
+    @Override
     public synchronized Throwable initCause(Throwable cause) {
         if (this.cause != null) {
             throw new IllegalStateException("Can't override cause");

@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2015 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2017 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -42,7 +42,7 @@ package javax.xml.soap;
 
 /**
  * A representation of a node (element) in an XML document.
- * This interface extnends the standard DOM Node interface with methods for
+ * This interface extends the standard DOM Node interface with methods for
  * getting and setting the value of a node, for
  * getting and setting the parent of a node, and for removing a node.
  *
@@ -74,6 +74,7 @@ public interface Node extends org.w3c.dom.Node {
      * there are no children in which case a child {@code Text} node will be
      * created.
      *
+     * @param value {@code value} to set on the {@code Text} node
      * @exception IllegalStateException if the node is not a {@code Text}
      *              node and either has more than one child node or has a child
      *              node that is not a {@code Text} node.

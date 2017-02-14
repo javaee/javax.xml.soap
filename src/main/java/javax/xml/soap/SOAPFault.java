@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2015 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2017 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -482,6 +482,8 @@ public interface SOAPFault extends SOAPBodyElement {
      * Creates or replaces any existing Node element value for
      * this {@code SOAPFault} object. The Node element
      * is optional in SOAP 1.2.
+     *
+     * @param uri - the URI of the Node
      *
      * @exception SOAPException  if there was an error in setting the
      *            Node for this  {@code SOAPFault} object.
