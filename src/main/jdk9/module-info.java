@@ -38,6 +38,9 @@
  * holder.
  */
 
+/**
+ * Defines the SOAP with Attachments API for Java.
+ */
 module java.xml.soap {
     requires transitive java.xml;
     requires transitive java.activation;
