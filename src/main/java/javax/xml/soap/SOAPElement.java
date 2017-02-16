@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2015 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2017 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -292,7 +292,7 @@ public interface SOAPElement extends Node, org.w3c.dom.Element {
      * @see SOAPElement#getAllAttributesAsQNames()
      * @return an iterator over the names of the attributes
      */
-    public Iterator getAllAttributes();
+    public Iterator<Name> getAllAttributes();
 
     /**
      * Returns an {@code Iterator} over all of the attributes
@@ -305,7 +305,7 @@ public interface SOAPElement extends Node, org.w3c.dom.Element {
      * @see SOAPElement#getAllAttributes()
      * @since 1.6, SAAJ 1.3
      */
-    public Iterator getAllAttributesAsQNames();
+    public Iterator<QName> getAllAttributesAsQNames();
 
 
     /**
@@ -327,7 +327,7 @@ public interface SOAPElement extends Node, org.w3c.dom.Element {
      * @return an iterator over the namespace prefixes in this
      *         {@code SOAPElement} object
      */
-    public Iterator getNamespacePrefixes();
+    public Iterator<String> getNamespacePrefixes();
 
     /**
      * Returns an {@code Iterator} over the namespace prefix
@@ -340,7 +340,7 @@ public interface SOAPElement extends Node, org.w3c.dom.Element {
      *
      * @since 1.6, SAAJ 1.2
      */
-    public Iterator getVisibleNamespacePrefixes();
+    public Iterator<String> getVisibleNamespacePrefixes();
 
     /**
      * Creates a {@code QName} whose namespace URI is the one associated
@@ -444,7 +444,7 @@ public interface SOAPElement extends Node, org.w3c.dom.Element {
      * {@link Node}s of this element. This includes {@code javax.xml.soap.Text}
      * objects as well as {@code SOAPElement} objects.
      * <p>
-     * Calling this method may cause child {@code Element},
+     * Calling this method must cause child {@code Element},
      * {@code SOAPElement} and {@code org.w3c.dom.Text} nodes to be
      * replaced by {@code SOAPElement}, {@code SOAPHeaderElement},
      * {@code SOAPBodyElement} or {@code javax.xml.soap.Text} nodes as
@@ -459,14 +459,14 @@ public interface SOAPElement extends Node, org.w3c.dom.Element {
      * @return an iterator with the content of this {@code SOAPElement}
      *         object
      */
-    public Iterator getChildElements();
+    public Iterator<Node> getChildElements();
 
     /**
      * Returns an {@code Iterator} over all the immediate child
      * {@link Node}s of this element with the specified name. All of these
      * children will be {@code SOAPElement} nodes.
      * <p>
-     * Calling this method may cause child {@code Element},
+     * Calling this method must cause child {@code Element},
      * {@code SOAPElement} and {@code org.w3c.dom.Text} nodes to be
      * replaced by {@code SOAPElement}, {@code SOAPHeaderElement},
      * {@code SOAPBodyElement} or {@code javax.xml.soap.Text} nodes as
@@ -486,14 +486,14 @@ public interface SOAPElement extends Node, org.w3c.dom.Element {
      *         specified name
      * @see SOAPElement#getChildElements(javax.xml.namespace.QName)
      */
-    public Iterator getChildElements(Name name);
+    public Iterator<Node> getChildElements(Name name);
 
     /**
      * Returns an {@code Iterator} over all the immediate child
      * {@link Node}s of this element with the specified qname. All of these
      * children will be {@code SOAPElement} nodes.
      * <p>
-     * Calling this method may cause child {@code Element},
+     * Calling this method must cause child {@code Element},
      * {@code SOAPElement} and {@code org.w3c.dom.Text} nodes to be
      * replaced by {@code SOAPElement}, {@code SOAPHeaderElement},
      * {@code SOAPBodyElement} or {@code javax.xml.soap.Text} nodes as
@@ -514,7 +514,7 @@ public interface SOAPElement extends Node, org.w3c.dom.Element {
      * @see SOAPElement#getChildElements(Name)
      * @since 1.6, SAAJ 1.3
      */
-    public Iterator getChildElements(QName qname);
+    public Iterator<Node> getChildElements(QName qname);
 
     /**
      * Sets the encoding style for this {@code SOAPElement} object

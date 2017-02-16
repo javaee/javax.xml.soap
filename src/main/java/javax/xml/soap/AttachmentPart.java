@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2004-2015 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2004-2017 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -40,7 +40,6 @@
 package javax.xml.soap;
 
 import java.io.InputStream;
-import java.io.Reader;
 import java.util.Iterator;
 
 import javax.activation.DataHandler;
@@ -513,7 +512,7 @@ public abstract class AttachmentPart {
      * @return  an {@code Iterator} object with all of the Mime
      *          headers for this {@code AttachmentPart} object
      */
-    public abstract Iterator getAllMimeHeaders();
+    public abstract Iterator<MimeHeader> getAllMimeHeaders();
 
     /**
      * Retrieves all {@code MimeHeader} objects that match a name in
@@ -524,7 +523,7 @@ public abstract class AttachmentPart {
      * @return  all of the MIME headers that match one of the names in the
      *           given array as an {@code Iterator} object
      */
-    public abstract Iterator getMatchingMimeHeaders(String[] names);
+    public abstract Iterator<MimeHeader> getMatchingMimeHeaders(String[] names);
 
     /**
      * Retrieves all {@code MimeHeader} objects whose name does
@@ -537,5 +536,5 @@ public abstract class AttachmentPart {
      *           given array.  The nonmatching MIME headers are returned as an
      *           {@code Iterator} object.
      */
-    public abstract Iterator getNonMatchingMimeHeaders(String[] names);
+    public abstract Iterator<MimeHeader> getNonMatchingMimeHeaders(String[] names);
 }

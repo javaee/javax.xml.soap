@@ -118,5 +118,5 @@ public interface Detail extends SOAPFaultElement {
      * @return an {@code Iterator} object over the {@code DetailEntry}
      *             objects in this {@code Detail} object
      */
-    public Iterator getDetailEntries();
+    public Iterator<DetailEntry> getDetailEntries();
 }

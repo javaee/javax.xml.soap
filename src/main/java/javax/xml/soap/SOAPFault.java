@@ -177,7 +177,7 @@ public interface SOAPFault extends SOAPBodyElement {
      *
      * @since 1.6, SAAJ 1.3
      */
-    public Iterator getFaultSubcodes();
+    public Iterator<QName> getFaultSubcodes();
 
     /**
      * Removes any Subcodes that may be contained by this
@@ -396,7 +396,7 @@ public interface SOAPFault extends SOAPBodyElement {
      *
      * @since 1.6, SAAJ 1.3
      */
-    public Iterator getFaultReasonLocales() throws SOAPException;
+    public Iterator<Locale> getFaultReasonLocales() throws SOAPException;
 
     /**
      * Returns an {@code Iterator} over a sequence of
@@ -412,7 +412,7 @@ public interface SOAPFault extends SOAPBodyElement {
      *
      * @since 1.6, SAAJ 1.3
      */
-    public Iterator getFaultReasonTexts() throws SOAPException;
+    public Iterator<String> getFaultReasonTexts() throws SOAPException;
 
     /**
      * Returns the Reason Text associated with the given {@code Locale}.

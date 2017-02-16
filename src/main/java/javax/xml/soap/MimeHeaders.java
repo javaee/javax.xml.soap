@@ -195,7 +195,7 @@ public class MimeHeaders {
      * @return  an {@code Iterator} object over this {@code MimeHeaders}
      *          object's list of {@code MimeHeader} objects
      */
-    public Iterator getAllHeaders() {
+    public Iterator<MimeHeader> getAllHeaders() {
         return headers.iterator();
     }
 
@@ -269,7 +269,7 @@ public class MimeHeaders {
      * @return  an {@code Iterator} object over the {@code MimeHeader}
      *          objects whose name matches one of the names in the given list
      */
-    public Iterator getMatchingHeaders(String[] names) {
+    public Iterator<MimeHeader> getMatchingHeaders(String[] names) {
         return new MatchingIterator(names, true, headers.iterator());
     }
 
@@ -282,7 +282,7 @@ public class MimeHeaders {
      * @return  an {@code Iterator} object over the {@code MimeHeader}
      *          objects whose name does not match one of the names in the given list
      */
-    public Iterator getNonMatchingHeaders(String[] names) {
+    public Iterator<MimeHeader> getNonMatchingHeaders(String[] names) {
         return new MatchingIterator(names, false, headers.iterator());
     }
 }
