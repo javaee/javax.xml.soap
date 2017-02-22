@@ -109,7 +109,7 @@ public abstract class SAAJMetaFactory {
 
             } catch (Exception e) {
                 throw new SOAPException(
-                    "Unable to create SAAJ meta-factory" + e.getMessage());
+                    "Unable to create SAAJ meta-factory: " + e.getMessage());
             }
     }
 
