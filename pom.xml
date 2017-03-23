@@ -202,14 +202,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>3.2.0</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>biz.aQute.bnd</groupId>
-                        <artifactId>biz.aQute.bndlib</artifactId>
-                        <version>3.3.0</version>
-                    </dependency>
-                </dependencies>
+                <version>3.3.0</version>
                 <configuration>
                     <supportedProjectTypes>
                         <supportedProjectType>jar</supportedProjectType>
@@ -404,8 +397,7 @@
                             <configuration>
                                 <argLine>
                                     --add-modules java.xml.soap
-                                    --module-path ${basedir}/target/classes
-                                    --patch-module java.xml.soap=${basedir}/target/test-classes
+                                    --upgrade-module-path target/classes
                                     --add-reads java.xml.soap=ALL-UNNAMED
                                 </argLine>
                             </configuration>

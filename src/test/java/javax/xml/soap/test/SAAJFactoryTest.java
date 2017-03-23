@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -38,7 +38,7 @@
  * holder.
  */
 
-package javax.xml.soap;
+package javax.xml.soap.test;
 
 
 import junit.framework.AssertionFailedError;
@@ -54,6 +54,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.logging.Logger;
+import javax.xml.soap.MessageFactory;
 
 import static junit.framework.TestCase.assertTrue;
 
@@ -103,7 +104,7 @@ public class SAAJFactoryTest {
     public static Collection configurations() {
         return Arrays.asList(new Object[][]{
                 // see SAAJFactoryTest constructor signature for paremeters meaning ...
-                {null, "com.sun.xml.internal.messaging.saaj.soap.ver1_1.SOAPMessageFactory1_1Impl", null, "scenario2", null, null},
+                {null, "com.sun.xml.internal.messaging.saaj.soap.ver1_1.SOAPMessageFactory1_1Impl", javax.xml.soap.SOAPException.class, "scenario2", null, null},
                 {"saaj.factory.Valid", "saaj.factory.Valid", null, "scenario5", null, null},
                 {"saaj.factory.NonExisting SAAJFactoryTest", null, javax.xml.soap.SOAPException.class, "scenario6", null, null},
                 {"saaj.factory.Invalid SAAJFactoryTest", null, javax.xml.soap.SOAPException.class, "scenario7", null, null},
@@ -111,7 +112,7 @@ public class SAAJFactoryTest {
                 {null, "saaj.factory.Valid", null, "scenario9", null, "saaj.factory.Valid"},
                 {null, null, javax.xml.soap.SOAPException.class, "scenario10", null, "saaj.factory.NonExisting"},
                 {null, null, javax.xml.soap.SOAPException.class, "scenario11", null, "saaj.factory.Invalid"},
-                {null, "com.sun.xml.internal.messaging.saaj.soap.ver1_1.SOAPMessageFactory1_1Impl", null, "scenario12", null, null},
+                {null, "com.sun.xml.internal.messaging.saaj.soap.ver1_1.SOAPMessageFactory1_1Impl", javax.xml.soap.SOAPException.class, "scenario12", null, null},
                 {null, "saaj.factory.Valid", null, "scenario15", null, "saaj.factory.Valid"},
 
                 {null, "saaj.factory.Valid", null, "unsafe-scenario1", "saaj.factory.Valid", null},
