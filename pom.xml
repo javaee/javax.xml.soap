@@ -66,7 +66,7 @@
     <name>${api.package} API</name>
     <description>SAAJ API</description>
 
-    <url>http://saaj.java.net</url>
+    <url>https://javaee.github.io/javaee-spec/</url>
 
     <developers>
         <developer>
@@ -81,34 +81,29 @@
 
     <organization>
         <name>GlassFish Community</name>
-        <url>https://glassfish.java.net</url>
+        <url>https://javaee.github.io/glassfish</url>
     </organization>
     <licenses>
         <license>
-            <name>CDDL 1.1</name>
-            <url>https://glassfish.java.net/public/CDDL+GPL_1_1.html</url>
-            <distribution>repo</distribution>
-        </license>
-        <license>
-            <name>GPL2 w/ CPE</name>
-            <url>https://glassfish.java.net/public/CDDL+GPL_1_1.html</url>
+            <name>CDDL + GPLv2 with classpath exception</name>
+            <url>https://javaee.github.io/metro/LICENSE</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
     <issueManagement>
-        <system>jira</system>
-        <url>http://java.net/jira/browse/SAAJ</url>
+        <system>IssueTracker</system>
+        <url>https://github.com/javaee/javax.xml.soap/issues</url>
     </issueManagement>
     <mailingLists>
         <mailingList>
             <name>SAAJ Developer</name>
-            <archive>users@saaj.java.net</archive>
+            <archive>javaee-spec@javaee.groups.io</archive>
         </mailingList>
     </mailingLists>
     <scm>
-        <connection>scm:svn:https://svn.java.net/svn/glassfish~svn/trunk/api/javaee-api/javax.xml.soap</connection>
-        <developerConnection>scm:svn:https://svn.java.net/svn/glassfish~svn/trunk/api/javaee-api/javax.xml.soap</developerConnection>
-        <url>http://java.net/projects/glassfish/sources/svn/show/trunk/api/javaee-api/javax.xml.soap</url>
+        <connection>scm:git:git://github.com/javaee/javax.xml.soap.git</connection>
+        <developerConnection>scm:git:git@github.com:javaee/javax.xml.soap.git</developerConnection>
+        <url>https://github.com/javaee/javax.xml.soap</url>
     </scm>
 
     <dependencies>
