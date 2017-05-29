@@ -40,8 +40,7 @@
 
 /**
  * Provides the API for creating and building SOAP messages. This package
- * is defined in the <i>SOAP with Attachments API for Java<sup><font style="font-size:x-small">TM</font></sup> 
- * (SAAJ) 1.4</i> specification.
+ * is defined in the <i>SOAP with Attachments API for Java&trade; (SAAJ) 1.4</i> specification.
  * 
  * <p> The API in the <code>javax.xml.soap</code> package allows you to do the following:
  *  
