@@ -75,7 +75,7 @@ public interface SOAPHeaderElement extends SOAPElement {
      * Sets the {@code Role} associated with this {@code SOAPHeaderElement}
      * object to the specified {@code Role}.
      *
-     * @param uri - the URI of the {@code Role}
+     * @param uri the URI of the {@code Role}
      *
      * @throws SOAPException if there is an error in setting the role
      *
