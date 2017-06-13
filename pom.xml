@@ -52,7 +52,7 @@
 
     <groupId>javax.xml.soap</groupId>
     <artifactId>javax.xml.soap-api</artifactId>
-    <version>1.4.0-SNAPSHOT</version>
+    <version>1.4.0</version>
 
     <properties>
         <api.package>javax.xml.soap</api.package>
@@ -111,7 +111,8 @@
         <connection>scm:git:git://github.com/javaee/javax.xml.soap.git</connection>
         <developerConnection>scm:git:git@github.com:javaee/javax.xml.soap.git</developerConnection>
         <url>https://github.com/javaee/javax.xml.soap</url>
-    </scm>
+      <tag>1.4.0</tag>
+  </scm>
 
     <dependencies>
         <dependency>
